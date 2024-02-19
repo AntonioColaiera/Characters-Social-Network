@@ -1,16 +1,19 @@
-package com.characters.Model;
+package Characters.Model;
 
-import java.util.List;
-import javax.persistence.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
+import java.util.List; 
+import jakarta.persistence.*;
+
+import jakarta.persistence.OneToMany;
+import lombok.Data; 
+import lombok.NoArgsConstructor; 
+import lombok.AllArgsConstructor; 
+
 
 @Entity
-@Table(name = "users")
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Table(name = "users") 
+@Data 
+@NoArgsConstructor 
+@AllArgsConstructor 
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,8 +34,8 @@ public class User {
     private String profilePictureUrl;
     
     @OneToMany(mappedBy = "user")
-    private List<User> friends;
+    private List<User> friends; 
     
-    // @OneToMany(mappedBy = "user")
-    // private List<Post> posts;
+    //@OneToMany(mappedBy = "user")  
+   // private List<Post> posts;
 }

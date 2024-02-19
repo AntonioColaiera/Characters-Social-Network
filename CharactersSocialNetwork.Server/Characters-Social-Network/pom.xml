@@ -8,11 +8,11 @@
 		<version>3.2.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.characters</groupId>
+	<groupId>com.Characters</groupId>
 	<artifactId>Characters-Social-Network</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Characters-Social-Network</name>
-	<description>Demo project for Spring Boot</description>
+	<description>project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -25,15 +25,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		
 
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-			<optional>true</optional>
-		</dependency>
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
