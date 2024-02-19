@@ -1,9 +1,11 @@
+
 package Characters.Model;
 
 import jakarta.persistence.*;
 import lombok.Data; 
 import lombok.NoArgsConstructor; 
 import lombok.AllArgsConstructor; 
+import java.util.List;
 
 @Entity
 @Table(name = "posts") 
@@ -18,15 +20,19 @@ public class Post {
     @Column(nullable = false)
     private String title;
     
-    @Column(nullable = false)
-    private String content;
+    @Column(nullable = false, name = "description")
+    private String description;
     
-    @Column(name = "photo")
-    private String photo;
+    @ManyToMany
+    @JoinTable(
+        name = "post_characters",
+        joinColumns = @JoinColumn(name = "post_id"),
+        inverseJoinColumns = @JoinColumn(name = "character_id"))
+    private List<Character> characters;
     
     @ManyToOne
     @JoinColumn(name="user_id", nullable=false)
     private User user;
     
-
+    
 }
