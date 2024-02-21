@@ -2,12 +2,9 @@ package Characters.Model;
 
 import java.util.List; 
 import jakarta.persistence.*;
-
-import jakarta.persistence.OneToMany;
 import lombok.Data; 
 import lombok.NoArgsConstructor; 
 import lombok.AllArgsConstructor; 
-
 
 @Entity
 @Table(name = "users") 
@@ -34,13 +31,11 @@ public class User {
     private String profilePictureUrl;
     
     @OneToMany(mappedBy = "user")
-    private List<User> friends; 
+    private List<Friendship> friendships; 
     
     @OneToMany(mappedBy = "user")  
     private List<Post> posts;
     
     @OneToMany(mappedBy = "user")  
     private List<Character> characters;
-    
-    
 }
